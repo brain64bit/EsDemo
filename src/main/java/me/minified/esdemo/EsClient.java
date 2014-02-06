@@ -10,8 +10,6 @@ import java.net.InetSocketAddress;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
-import org.elasticsearch.node.NodeBuilder;
-
 /**
  *
  * @author agung

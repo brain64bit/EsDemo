@@ -19,18 +19,19 @@ public class App
         
         final EsDao esd = new EsDao(client); 
         
-//        System.out.println("index author");
-//        for (Author au : authors) {
-//            esd.indexParent(au);
-//        }
-//        System.out.println("index book");
-//        for (int i = 0; i < books.size(); i++) {
-//            Book b = books.get(i);
-//            Author au = authors.get(i);
-//            esd.indexChild(b, au);
-//        }
+        indexTask(esd);
+        System.out.println("index author");
+        for (Author au : authors) {
+            esd.indexParent(au);
+        }
+        System.out.println("index book");
+        for (int i = 0; i < books.size(); i++) {
+            Book b = books.get(i);
+            Author au = authors.get(i);
+            esd.indexChild(b, au);
+        }
         
-        for(Map<String, Object> m : esd.searchBook("gloria")){
+        for(Map<String, Object> m : esd.searchBook("walter")){
             System.out.println("found = "+m.toString());
         }
     }
